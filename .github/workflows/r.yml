@@ -38,7 +38,8 @@ jobs:
           source /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
           cd /home/runner/work/test.ci.R/test.ci.R/.venv/lib/python3.8/site-packages
           ls -al
-          curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/sdk/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
+          curl -LJO https://github.com/https://github.com/SongHyeopPark/test.ci.R/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
+          #curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/sdk/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
           curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/heaan/heaan.cpython-38d-x86_64-linux-gnu.so
           curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/heaan/piheaan.cpython-38d-x86_64-linux-gnu.so
           pip install pandas

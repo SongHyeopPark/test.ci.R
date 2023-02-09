@@ -10,10 +10,11 @@ name: R
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
-  jobs:
+    branches: [main]
+jobs:
+  RCMDCheck:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}

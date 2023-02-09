@@ -31,4 +31,4 @@ jobs:
           r-version: 4.1.1
 
       - name: Run R script
-        uses: Rscript sample.R
+        uses: Rscript /R/sample.R

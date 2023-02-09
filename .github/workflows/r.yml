@@ -36,8 +36,7 @@ jobs:
           python -m pip install virtualenv
           virtualenv .venv
           source /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
-          pip install pandas
-
+          wget https://github.com/CryptoLabInc/packages/tree/main/sdk/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
 
 
 

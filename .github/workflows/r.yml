@@ -36,6 +36,6 @@ jobs:
           python -m pip install virtualenv
           virtualenv .venv
           source /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
-          cd /home/runner/wokr/test.ci.R/test.ci.R/.venv/lib/python3.8/site-packages
+          cd /home/runner/work/test.ci.R/test.ci.R/.venv/lib/python3.8/site-packages
           curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/sdk/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
           pip install heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl

@@ -31,7 +31,7 @@ jobs:
           r-version: 4.1.1
       - name: Install dependencies
         run: |
-          install.packages(c('devtools', 'testthat', 'dplyr'))
-          remotes::install_deps(dependencies = TRUE)
+          install.packages(c('dplyr'))
+          1+1
         shell: Rscript {0}
 

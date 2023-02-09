@@ -31,7 +31,7 @@ jobs:
           r-version: 4.1.1
       - name: Install dependencies
         run: |
-          install.packages(c('dplyr'))
+          library(dplyr)
           1+1
         shell: Rscript {0}
 

@@ -19,22 +19,28 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        r-version: ['3.6.3', '4.1.1']
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up R ${{ matrix.r-version }}
-        uses: r-lib/actions/setup-r@f57f1301a053485946083d7a45022b278929a78a
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          r-version: ${{ matrix.r-version }}
-      - name: Install dependencies
+          python-version: 3.8
+
+      - name: Set up virtual environment
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
-      - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-        shell: Rscript {0}
+          python -m pip install --upgrade pip
+          python -m pip install virtualenv
+          virtualenv .venv
+          source /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
+          cd /home/runner/work/test.ci.R/test.ci.R/.venv/lib/python3.8/site-packages
+          ls -al
+          curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/sdk/heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
+          curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/heaan/heaan.cpython-38d-x86_64-linux-gnu.so
+          curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/heaan/piheaan.cpython-38d-x86_64-linux-gnu.so
+          pip install pandas
+          pip list
+          pip install heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl

@@ -31,8 +31,11 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c('devtools', 'roxygen2', 'dplyr'))
-          library(dplyr)
-          library(devtools)
-          1+1
         shell: Rscript {0}
+
+      - name: Check packages
+        run: |
+          library(dplyr)
+        shell: Rscript {0}
+
 

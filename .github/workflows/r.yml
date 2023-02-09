@@ -32,5 +32,5 @@ jobs:
         run: Rscript sample.R
 
       - name: install packages
-        run: install.packages("dplyr")
+        run: library("dplyr")
         shell: Rscript {0}

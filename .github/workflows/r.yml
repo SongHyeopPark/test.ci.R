@@ -43,4 +43,4 @@ jobs:
           curl -LJO -u SongHyeopPark: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 https://github.com/CryptoLabInc/packages/tree/main/heaan/piheaan.cpython-38d-x86_64-linux-gnu.so
           pip install pandas
           pip list
-          #pip install heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
+          pip install heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl

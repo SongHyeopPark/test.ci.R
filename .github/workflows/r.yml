@@ -34,5 +34,6 @@ jobs:
           install.packages(c("dplyr", "devtools", "testthat")
           library(dplyr)
           library(devtools)
+          1+1
         shell: Rscript {0}
 

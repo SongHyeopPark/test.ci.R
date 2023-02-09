@@ -31,7 +31,7 @@ jobs:
           r-version: 4.1.1
       - name: Install dependencies
         run: |
-          install.packages(c("dplyr", "devtools", "testthat")
+          install.packages(c('devtools', 'roxygen2', 'dplyr'))
           library(dplyr)
           library(devtools)
           1+1

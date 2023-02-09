@@ -36,6 +36,9 @@ jobs:
           python -m pip install virtualenv
           virtualenv .venv
           chmod +x /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
+          source /home/runner/work/test.ci.R/test.ci.R/.venv/bin/activate
+          pip install pandas
+
 
 
 

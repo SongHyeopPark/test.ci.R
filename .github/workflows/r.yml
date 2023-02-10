@@ -18,11 +18,11 @@ jobs:
     
     
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          repository: git@github.com:CryptoLabInc/packages.git
-          ref: main
+      #- name: Checkout code
+        #uses: actions/checkout@v2
+        #with:
+          #repository: git@github.com:CryptoLabInc/packages.git
+          #ref: main
 
       - name: Set up SSH key
         run: |
@@ -31,7 +31,7 @@ jobs:
           chmod 600 private_key
           eval "$(ssh-agent -s)"
           ssh-add private_key
-
+          private_key
         
       - name: check file
         run: ls -al

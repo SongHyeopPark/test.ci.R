@@ -25,7 +25,7 @@ jobs:
       - name: Set up SSH key
         run: |
           eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.songhpark1 }}'
+          ssh-add - <<< '${{ secrets.sdk_shp }}'
           mkdir -p ~/.ssh
           ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 

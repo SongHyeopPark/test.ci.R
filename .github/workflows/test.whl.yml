@@ -3,27 +3,18 @@ name: Install Wheel
 on: [push]
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  SSH_PRIVATE_KEY: ${{ secrets.sdk_shp }}
 jobs:
-  build:
+  clone:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: check path
-      run: ls -al
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-
-    - name: Install dependencies
+    - name: Set up SSH key
       run: |
-        pip install wheel
-
-
-    - name: Install Wheel
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ssh_key
+        chmod 600 ssh_key
+        eval $(ssh-agent -s)
+        ssh-add ssh_key
+    - name: Clone Repository
       run: |
-        pip install heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
+        git clone git@github.com:CryptoLabInc/packages.git

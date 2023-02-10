@@ -1,0 +1,21 @@
+name: Clone Repository
+
+on: [push]
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.sdk_shp }}
+
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up SSH key
+      run: |
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ssh_key
+        chmod 600 ssh_key
+        eval $(ssh-agent -s)
+        ssh-add ssh_key
+    - name: Clone Repository
+      run: |
+        git clone git@github.com:CryptoLabInc/packages.git

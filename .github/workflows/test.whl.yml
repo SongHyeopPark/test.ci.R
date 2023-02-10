@@ -23,14 +23,6 @@ jobs:
       run: |
         pip install wheel
 
-    - name: Download Wheel
-      uses: actions/download-artifact@v2
-      with:
-        name: heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
-        repository: SongHyeopPark/test.ci.R
-        ref: main
-        path: heaan_sdk-0.0.2-cp38-cp38-linux_x86_64.whl
-        auth_token: ${{ env.GITHUB_TOKEN }}
 
     - name: Install Wheel
       run: |

@@ -19,11 +19,7 @@ jobs:
     
   
       - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          repository: CryptoLabInc/packages
-          ref: main
-          token: ${{ secrets.PAT }}
+        run: git@github.com:CryptoLabInc/packages.git
           
 
       - name: check file

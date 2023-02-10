@@ -31,7 +31,7 @@ jobs:
           chmod 600 private_key
           eval "$(ssh-agent -s)"
           ssh-add private_key
-          private_key
+
         
       - name: check file
         run: ls -al
